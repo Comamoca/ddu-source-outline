@@ -27,7 +27,7 @@ Markdown editing support plugin.
 call ddu#start(#{ sources: [#{ name: 'outline' }] })
 ```
 
-> ![Note]
+> ![NOTE]
 > Can search outline by Japanease when with use [ddu-filter-kensaku](https://github.com/Milly/ddu-filter-kensaku).
 
 ```vim
