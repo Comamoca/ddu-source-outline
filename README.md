@@ -23,6 +23,8 @@ Markdown editing support plugin.
 
 ## 🚀 How to use
 
+### ddu-source-outline
+
 ```vim
 call ddu#start(#{ sources: [#{ name: 'outline' }] })
 ```
