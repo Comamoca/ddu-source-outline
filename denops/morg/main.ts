@@ -2,7 +2,7 @@ import { Denops, Entrypoint, execute, is, ensure } from "../../deps.ts";
 import remarkParse from "npm:remark-parse";
 import { unified } from "npm:unified";
 import { call, getline, line } from "jsr:@denops/std/function";
-import { replaceToLongName } from "../polyfill.ts";
+import { replaceToLongName } from "../langtable.ts";
 
 export const main: Entrypoint = (denops) => {
   console.log("blockrun");
