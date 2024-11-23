@@ -40,7 +40,7 @@ call ddc#custom#patch_global({
 
 ### Example
 
-カーソルをコードブロック上に合わせて`<leader>er`を押すとコードブロックが実行されます。
+Place the cursor over a code block and press `<leader>er` to execute the code block.
 
 ```vim
 vim.api.nvim_create_autocmd("BufEnter", {
