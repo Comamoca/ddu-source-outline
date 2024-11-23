@@ -5,4 +5,7 @@ export { BaseSource } from "jsr:@shougo/ddu-vim/source";
 export { type DduOptions } from "jsr:@shougo/ddu-vim/types";
 export { type Denops } from "jsr:@denops/core";
 export { unified } from "npm:unified";
-export { getline } from "jsr:@denops/std/function";
+export { execute, getline } from "jsr:@denops/std/function";
+export { ensure, is } from "jsr:@core/unknownutil";
+export type { Entrypoint } from "jsr:@denops/std";
+export { extract } from "jsr:@std/front-matter/any";
