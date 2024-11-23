@@ -3,6 +3,7 @@ import {
   BaseSource,
   DduOptions,
   Denops,
+  extract,
   getline,
   Item,
   SourceOptions,
@@ -28,10 +29,24 @@ export class Source extends BaseSource<Params> {
         // Get all strings from buffer.
         const buf = await getline(args.denops, 1, "$");
 
+        const extractMD = (text: string[]) => {
+          const joined = text.join("\n");
+
+          // HACK: Checking frontMatter
+          if (text[0].indexOf("---") == -1) {
+            return joined;
+          } else {
+            const { body } = extract(joined);
+            return body;
+          }
+        };
+
+        const md = extractMD(buf);
+
         // Parse and build markdown AST.
         const file = unified()
           .use(remarkParse)
-          .parse(buf.join("\n"));
+          .parse(md);
 
         // Collect all heading.
         const nodes = file.children.filter((node) => node.type == "heading");
