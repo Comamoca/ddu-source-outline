@@ -23,10 +23,12 @@ export const main: Entrypoint = (denops) => {
       return await Promise.resolve(rawCode);
     },
     async run(): Promise<unknown> {
+      const cursorPos = await line(denops, ".")
+
       const codeBlock = await call(denops, "denops#request", [
         denops.name,
         "context_codeblock",
-        [],
+        [cursorPos],
       ]) as { lang: string; src: string } | number;
 
       if (!is.Number(codeBlock)) {
